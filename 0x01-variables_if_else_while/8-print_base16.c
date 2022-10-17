@@ -9,14 +9,21 @@
 
 int main(void)
 {
-	int p;
+	int a;
+	int b;
 
-	p = 'a';
+	a = 'a';
+	b = '0';
 
-	while (p <= 'z')
+	while (b <= '9')
 	{
-		putchar(p);
-		p++;
+		putchar(b);
+		b++;
+	}
+	while (a <= 'f')
+	{
+		putchar(a);
+		a++;
 	}
 
 	putchar('\n');

@@ -11,21 +11,16 @@ int main(void)
 {
 	int n = '0';
 
-	while (n <= '9')
-	{
-		if (n == '9')
+	do {
+		putchar(n);
+		if (n < '9')
 		{
-			putchar(n);
-			n++;
-		}
-		else
-		{
-			putchar(n);
 			putchar(44);
 			putchar(32);
-			n++;
 		}
-	}
+		n++;
+	} while (n <= '9');
+
 	putchar(10);
 
 	return (0);

@@ -13,8 +13,8 @@ void jack_bauer(void)
 
 	for (min = 0; min < (60 * 24); min++)
 	{
-		hour = mins / 60;
-		min = mins % 60;
+		hour = min / 60;
+		min = min % 60;
 		_putchar(48 + (hour / 10));
 		_putchar(48 + (hour % 10));
 		_putchar(':');

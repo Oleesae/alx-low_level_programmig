@@ -15,7 +15,7 @@ int main(void)
 	char a[] = "_putchar";
 	int len = strlen(a); /* set length of str 'a' in a variable */
 	int i = 0;
-	
+
 	while (i < len)
 	{
 		_putchar(a[i]);

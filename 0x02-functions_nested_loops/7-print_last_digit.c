@@ -2,16 +2,17 @@
 #include <stdlib.h>
 
 /**
- * print_last_digit - Entry, inputs the value to be evaluated
+ * print_last_digit - prints and returns last digit to be checked
  *
- * @d: number to be checkes
+ * @d: number
  *
- * Return: the last digit of d
+ * Return: the last digit of @d
  */
 
 int print_last_digit(int d)
 {
-	int ld = d % 10;
+	int ld = abs(d % 10);
 
-	return (ld);
+	_putchar('0' + ld);
+	return (1);
 }

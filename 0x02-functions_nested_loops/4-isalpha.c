@@ -2,23 +2,23 @@
 #include "main.h"
 
 /**
- * _islower - checks for lowercase values
+ * _isalpha - checks for alphanumeric values
  *
  * @c: value to be checked
  *
  * Return: 1 if true or 0 if false
  */
 
-int _islower(int c)
+int _isalpha(int c)
 {
-	int low = c;
+	int al = c;
 
-	if (low < 'a' || low > 'z')
+	if (isalpha(al))
 	{
-		return (0);
+		return (1);
 	}
 	else
 	{
-		return (1);
+		return (0);
 	}
 }

@@ -7,7 +7,7 @@
  * @a: integer to be summed
  * @b: integer to be summed
  *
- * Return: returns 0 (Success)
+ * Return: returns value of add (Success)
  */
 
 int add(int a, int b)
@@ -16,7 +16,5 @@ int add(int a, int b)
 	int d = b;
 	int s = c + d;
 
-	_putchar(s);
-
-	return (0);
+	return (s);
 }

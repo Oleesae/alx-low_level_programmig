@@ -16,7 +16,7 @@ int add(int a, int b)
 	int d = b;
 	int s = c + d;
 
-	_putchar('0' + s);
+	_putchar(s);
 
 	return (0);
 }

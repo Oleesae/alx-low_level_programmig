@@ -13,11 +13,12 @@
 void print_to_98(int n)
 {
 	int len;
-	int i = 0;
+	int i;
 
 	if (n > 98)
 	{
 		len = n - 98;
+		i = 0;
 		
 		while (i < len)
 		{
@@ -31,6 +32,7 @@ void print_to_98(int n)
 	if (n < 98)
 	{
 		len = 98 - n;
+		i = 0;
 
 		while (i < len)
 		{

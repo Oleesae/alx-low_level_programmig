@@ -12,9 +12,9 @@
 
 int add(int a, int b)
 {
-	int a = a;
-	int b = b;
-	int s = a + b;
+	int c = a;
+	int d = b;
+	int s = c + d;
 
 	_putchar('0' + s);
 

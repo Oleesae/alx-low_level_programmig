@@ -12,6 +12,8 @@
 
 int add(int a, int b)
 {
+	int a = a;
+	int b = b;
 	int s = a + b;
 
 	_putchar('0' + s);

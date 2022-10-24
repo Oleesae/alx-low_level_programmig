@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * print_to_98 - prints the number provided until it gets to 98
+ * print_to_98 - prints the number n to 98
  *
  * @n: number to be printed first
  *
@@ -12,35 +12,39 @@
 
 void print_to_98(int n)
 {
-	int len;
-	int i;
-
-	if (n > 98)
+	if (n >= 0 && n < 98)
 	{
-		len = n - 98;
-		i = 0;
-		
-		while (i < len)
-		{
-			printf("%d, ", n);
-			n--;
-		}
-		if (i == len)
-			printf("%d", n);
-	}
-
-	if (n < 98)
-	{
-		len = 98 - n;
-		i = 0;
-
-		while (i < len)
+		while (n != 98)
 		{
 			printf("%d, ", n);
 			n++;
 		}
-		if (i == len)
+
+		if (n == 98)
 			printf("%d", n);
 	}
-}
+	else if (n > 0 &&  n > 98)
+	{
+		while (n != 98)
+		{
+			printf("%d, ", n);
+			n--;
+		}
 
+		if (n == 98)
+			printf("%d", n);
+	}
+	else if (n <= 0)
+	{
+		while (n != 98)
+		{
+			printf("%d, ", n);
+			n++;
+		}
+
+		if (n == 98)
+			printf("%d", n);
+	}
+	else
+		printf("%d", n);
+}

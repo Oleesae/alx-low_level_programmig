@@ -55,9 +55,8 @@ void print_times_table(int n)
 				}
 				r++;
 			}
-
-			_putchar('\n');
 			c++;
 		}
+		_putchar('\n');
 	}
 }

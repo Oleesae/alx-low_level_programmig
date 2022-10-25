@@ -27,7 +27,7 @@ void print_times_table(int n)
 					if (m / 10) /* if more than 2 digits */
 					{
 						if (m / 100) /* if three digit */
-						{
+						{lx-low_level_programming
 							_putchar('0' + (m / 100));
 							_putchar('0' + (m / 10) % 10);
 							_putchar('0' + (m % 10));
@@ -52,12 +52,11 @@ void print_times_table(int n)
 						_putchar(',');
 						_putchar(' ');
 					}
+					_putchar('\n');
 				}
 				r++;
 			}
 			c++;
 		}
 	}
-
-	_putchar('\n');
 }

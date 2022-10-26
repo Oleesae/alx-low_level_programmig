@@ -2,6 +2,20 @@
 #include <stdio.h>
 
 /**
+ * spaces - prints n number of spaces
+ * @n: number of spaces to be printed
+ * Return: void
+ */
+
+void spaces(int n)
+{
+	int i = 0;
+
+	for (; i < n; i++)
+		_putchar(' ');
+}
+
+/**
  * print_times_table - prints the n times table not greater than 15
  *
  * @n: the number of times table to be printed
@@ -11,52 +25,43 @@
 
 void print_times_table(int n)
 {
-	/* if n is greater than 15 do nothing */
-	if (n <= 15 || n >= 0)
-	{
-		int m, r, c = 0; /* set row(r) and column(c) variables */
+	int m, r, c; /* set row(r) and column(c) variables */
 
-		while (c <= n) /* column should not exceed n */
+	if (n <= 15 && n >= 0) /* if n is greater than 15 or less than 0 do nothing */
+	{
+		for (r = 0; r <= n; r++) /* no of rows should not exceed n */
 		{
-			r = c; /* let row equal column */
-			while (r <= n) /* row should not be greater than n */
+			for (c = 0; c <= n; c++) /* no of columns should not exceed n */
 			{
 				m = c * r; /* multiply c and r */
-
 				if (c != 0) /* if not first column */
 				{
-					if (m / 10) /* if more than 2 digits */
+					if ((m / 10) && (m / 100)) /* if three digit */
 					{
-						if (m / 100) /* if three digit */
-						{
-							_putchar('0' + (m / 100));
-							_putchar('0' + (m / 10) % 10);
-							_putchar('0' + (m % 10));
-						}
-						else /* if two digit */
-						{
-							_putchar(' ');
-							_putchar('0' + (m / 10) % 10);
-							_putchar('0' + (m % 10));
-						}
-					}
-					else /* if only one digit */
-					{
-						_putchar(' ');
-						_putchar(' ');
+						spaces(1);
+						_putchar('0' + (m / 100));
+						_putchar('0' + (m / 10) % 10);
 						_putchar('0' + (m % 10));
 					}
-
-					/* if not last column, add ',' ' ' */
-					if (c != n)
+					else if ((m / 10) && !(m / 100)) /* if two digit */
 					{
-						printf(", ");
+						spaces(2);
+						_putchar('0' + (m / 10) % 10);
+						_putchar('0' + (m % 10));
+					}
+					else if (!(m / 10)) /* if single digit */
+					{
+						spaces(3);
+						_putchar('0' + (m % 10));
 					}
 				}
-				r++;
+				else
+					_putchar('0' + (m % 10));
+				if (c != n) /* if not last column, add ',' */
+					_putchar(',');
 			}
-			c++;
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
+

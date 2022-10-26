@@ -49,8 +49,7 @@ void print_times_table(int n)
 					/* if not last column, add ',' ' ' */
 					if (c != n)
 					{
-						_putchar(',');
-						_putchar(' ');
+						printf(", ");
 					}
 				}
 				r++;

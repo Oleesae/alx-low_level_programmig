@@ -9,14 +9,12 @@ void print_most_numbers(void)
 {
 	#define START 48
 	#define END 57
-	#define TWO 50
-	#define FOUR 52
 
 	int i = START;
 
 	while (i < (END + 1))
 	{
-		if (i != TWO || i != FOUR)
+		if (i != '2'  || i != '4')
 		{
 			_putchar(i);
 		}

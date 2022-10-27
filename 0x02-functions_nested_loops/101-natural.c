@@ -2,14 +2,13 @@
 #include <stdio.h>
 
 /**
- * sum_multiples - prints the sum of the multiples of 3 and 5
- * @n: range of numbers to search for multiples excluding n.
- * Return: void
+ * main- prints the sum of the multiples of 3 and 5
+ * Return: Always 0 (Success)
  */
 
-void sum_multiples(int n)
+int main(void)
 {
-	#define RANGE n
+	#define RANGE 1024
 	int i, sum = 0; /* set variables to hold sum */
 
 	/* loop through the RANGE */
@@ -26,4 +25,5 @@ void sum_multiples(int n)
 	}
 	/* print the result, sum */
 	printf("%d\n", sum);
+	return (0);
 }

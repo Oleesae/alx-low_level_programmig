@@ -7,18 +7,14 @@
 
 void print_most_numbers(void)
 {
-	#define START 48
-	#define END 57
+	int a;
 
-	char i = START;
-
-	while (i < (END + 1))
+	for (a = '0'; a <= '9'; a++)
 	{
-		if (i != '2' || i != '4')
+		if (a != '2' || a != '4')
 		{
-			_putchar(i);
+			_putchar(a);
 		}
-		i++;
 	}
 	_putchar('\n');
 }

@@ -16,7 +16,7 @@ void print_most_numbers(void)
 
 	while (i < (END + 1))
 	{
-		if ((i != TWO) || (i != FOUR))
+		if (i != TWO || i != FOUR)
 		{
 			_putchar(i);
 		}

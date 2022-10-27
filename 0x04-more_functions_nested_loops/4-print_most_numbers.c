@@ -15,11 +15,11 @@ void print_most_numbers(void)
 
 	while (a <= END)
 	{
-		if (a != TWO || a != FOUR)
+		if (a == TWO || a == FOUR)
 		{
-			_putchar(a);
 			a++;
 		}
+		_putchar(a);
 		a++;
 	}
 	_putchar('\n');

@@ -10,15 +10,15 @@ void print_most_numbers(void)
 	#define START 48
 	#define END 57
 
-	int i = START;
+	char i = START;
 
 	while (i < (END + 1))
 	{
 		if (i != '2'  || i != '4')
 		{
 			_putchar(i);
-			i++;
 		}
+		i++;
 	}
 	_putchar('\n');
 }

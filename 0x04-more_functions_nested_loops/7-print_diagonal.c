@@ -12,11 +12,15 @@ void print_diagonal(int n)
 
 	while (val > 0) /* val should always be greater than 0 to do this */
 	{
-		for (i = 1; i != val; i++)
+		i = 1;
+		while (i == val)
 		{
-			_putchar(' '); /* print a space if not yet val */
+			_putchar('\\'); /* print a line while i == val */
+			_putchar('\n');
+			i++;
 		}
-		_putchar('\\'); /* print a line while i == val */
+		_putchar(' ');
+
 		val--; /* decrement val till the condition fails */
 	}
 	_putchar('\n'); /* print a new line if condition fails */

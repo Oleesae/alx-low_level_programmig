@@ -8,10 +8,12 @@
 
 void print_line(int n)
 {
-	while (n <= 0)
+	int val = n; /* set n in a variable val */
+
+	while (val > 0) /* val should always be greater than 0 to do this */
 	{
-		_putchar('_');
-		n--;
+		_putchar('_'); /* print a line while the conditon is true */
+		val--; /* decrement val till the condition fails */
 	}
-	_putchar('\n');
+	_putchar('\n'); /* print a new line if condition fails */
 }

@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * print_diagonal - prints a diagonal line
@@ -11,19 +10,22 @@ void print_diagonal(int n)
 {
 	int val = n, c, r; /* set n in a variable val */
 
-	while (val > 0) /* val should always be greater than 0 to do this */
+	if (val > 0) /* val should always be greater than 0 to do this */
 	{
-		for (r = 0; r < val; r++)
+		for (r = 0; r < val; r++) /* set row to never exceed val */
 		{
-			c = 0;
-			while (c != r)
+			c = 0; /* initiate column */
+			while (c != r) /* print ' ' if column does not equal row */
 			{
-				putchar(' ');
+				_putchar(' ');
 				c++;
 			}
-			putchar('\\');
-			putchar('\n');
+			_putchar('\\');
+			_putchar('\n');
 		}
 	}
-	_putchar('\n'); /* print a new line if condition fails */
+	else
+	{
+		_putchar('\n'); /* print a new line if condition fails */
+	}
 }

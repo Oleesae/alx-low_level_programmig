@@ -35,7 +35,7 @@ int main(void)
 		/* put commas and spaces if not last number */
 		if (c != 100)
 		{
-			printf(", ");
+			printf(" ");
 		}
 	}
 

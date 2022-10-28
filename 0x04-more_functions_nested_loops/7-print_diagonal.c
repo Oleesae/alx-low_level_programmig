@@ -8,7 +8,7 @@
 
 void print_diagonal(int n)
 {
-	int val = n, i; /* set n in a variable val */
+	int val = n, c, r; /* set n in a variable val */
 
 	while (val > 0) /* val should always be greater than 0 to do this */
 	{

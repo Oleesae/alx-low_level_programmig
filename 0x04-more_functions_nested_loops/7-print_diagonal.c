@@ -16,16 +16,16 @@ void print_diagonal(int n)
 		{
 			for (c = 0; c < val; c++)
 			{
-				if (c == r)
+				if (c != val)
+				{
+					_putchar(' ');
+					continue;
+				}
+				else
 				{
 					_putchar('\\');
 					_putchar('\n');
 					break;
-				}
-				else
-				{
-					_putchar(' ');
-					continue;
 				}
 			}
 		}

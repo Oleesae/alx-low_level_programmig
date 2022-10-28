@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_diagonal - prints a diagonal line
@@ -14,20 +15,14 @@ void print_diagonal(int n)
 	{
 		for (r = 0; r < val; r++)
 		{
-			for (c = 0; c < val; c++)
+			c = 0;
+			while (c != r)
 			{
-				if (c != val)
-				{
-					_putchar(' ');
-					continue;
-				}
-				else
-				{
-					_putchar('\\');
-					_putchar('\n');
-					break;
-				}
+				putchar(' ');
+				c++;
 			}
+			putchar('\\');
+			putchar('\n');
 		}
 	}
 	_putchar('\n'); /* print a new line if condition fails */

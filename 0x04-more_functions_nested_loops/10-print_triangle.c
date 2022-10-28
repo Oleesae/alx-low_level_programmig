@@ -12,7 +12,7 @@ void print_triangle(int size)
 
 	#define N size
 	#define LIM 1
-	/*check if size is a valid number '> 0' */
+	/* check if size is a valid number '> 0' */
 	if (N > 0)
 	{
 		/* check rows */
@@ -25,18 +25,18 @@ void print_triangle(int size)
 				/* checks for when to print # */
 				if (cal > LIM)
 				{
-					putchar(' ');
+					_putchar(' ');
 				}
 				else
 				{
-					putchar('#');
+					_putchar('#');
 				}
 			}
-			putchar('\n');
+			_putchar('\n');
 		}
 	}
 	else
 	{
-		putchar('\n'); /* prints new line if invalid number '<= 0' */
+		_putchar('\n'); /* prints new line if invalid number '<= 0' */
 	}
 }

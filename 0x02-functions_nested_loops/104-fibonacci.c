@@ -16,9 +16,9 @@ int main(void)
 	/* iterate to print through the rest */
 	for (i = 0; i < 92; i++)
 	{
-		printf("%lu, ", f3);
+		f3 = f1 + f2;
 
-		f3 = f2 + f1;
+		printf("%lu, ", f3);
 		f1 = f2;
 		f2 = f3;
 	}

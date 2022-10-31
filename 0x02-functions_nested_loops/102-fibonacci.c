@@ -26,5 +26,6 @@ int main(void)
 		f1 = f2;
 		f2 = f3;
 	}
+	printf("\n");
 	return (0);
 }

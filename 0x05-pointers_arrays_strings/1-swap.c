@@ -12,5 +12,5 @@ void swap_int(int *a, int *b)
 	int p = *b, q = *a; /* assign values to variables */
 
 	*a = p; /* swap *a for value of *b */
-	*b= q; /* swap *b for value of *a */
+	*b = q; /* swap *b for value of *a */
 }

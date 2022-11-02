@@ -9,8 +9,8 @@
 
 void swap_int(int *a, int *b)
 {
-	int p = *m, q = *n; /* assign values to variables */
+	int p = *b, q = *a; /* assign values to variables */
 
-	*n = p; /* swap *n for value of *m */
-	*m= q; /* swap *m for value of *n */
+	*a = p; /* swap *a for value of *b */
+	*b= q; /* swap *b for value of *a */
 }

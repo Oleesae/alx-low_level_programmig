@@ -31,6 +31,5 @@ void print_rev(char *s)
 	for (i = 0; i < ln; i++)
 	{
 		_putchar(*(s + ln));
-		ln--;
 	}
 }

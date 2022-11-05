@@ -26,9 +26,9 @@ int slen(char *s)
 
 void print_rev(char *s)
 {
-	int ln = slen(s);
+	int ln = slen(s), i;
 
-	while (ln >= 0)
+	for (i = 0; i < ln; i++)
 	{
 		_putchar(*(s + ln));
 		ln--;

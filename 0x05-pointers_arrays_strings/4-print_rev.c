@@ -30,7 +30,7 @@ void print_rev(char *s)
 
 	while (ln >= 0)
 	{
-		_putchar(*s);
+		_putchar(*(s + ln));
 		ln--;
 	}
 	_putchar('\n');

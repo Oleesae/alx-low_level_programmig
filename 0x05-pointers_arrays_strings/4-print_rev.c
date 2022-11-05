@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * _strlen - calculate length of string
+ * slen - calculate length of string
  * @s: string
  * Return: integer
  */
 
-int _strlen(char *s)
+int slen(char *s)
 {
 	int len = 0;
 
@@ -26,9 +26,9 @@ int _strlen(char *s)
 
 void print_rev(char *s)
 {
-	int ln = _strlen(s);
+	int ln = slen(s);
 
-	while (ln > 0)
+	while (ln >= 0)
 	{
 		_putchar(*(s + ln));
 		ln--;

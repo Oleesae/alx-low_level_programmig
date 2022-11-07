@@ -11,7 +11,7 @@ void print_rev(char *s)
 	int ln; /* length counter */
 
 	/* get the length of *s */
-	for (ln = 0; s[ln] != '\0\; ln++)
+	for (ln = 0; s[ln] != '\0'; ln++)
 		continue; /* do nothing */
 	/* ln equals index of \0 */
 	ln -= 1;

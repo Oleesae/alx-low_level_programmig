@@ -1,24 +1,6 @@
 #include "main.h"
 
 /**
- * slen - calculate length of string
- * @s: string
- * Return: integer
- */
-
-int slen(char *s)
-{
-	int len = 0;
-
-	while (*s != '\0')
-	{
-		len++;
-		s++;
-	}
-	return (len);
-}
-
-/**
  * print_rev - prints a string in reverse
  * @s: string
  * Return: void
@@ -26,11 +8,18 @@ int slen(char *s)
 
 void print_rev(char *s)
 {
-	int ln = slen(s), i;
+	int ln; /* length counter */
 
-	for (i = 0; i < ln; i++)
+	/* get the length of *s */
+	for (ln = 0; s[ln] != '\0\; ln++)
+		continue; /* do nothing */
+	/* ln equals index of \0 */
+	ln -= 1;
+	/* ln equals last index */
+	while (ln >= 0)
 	{
-		_putchar(*(s + ln));
+		_putchar(s[ln]);
+		ln--;
 	}
 	_putchar('\n');
 }

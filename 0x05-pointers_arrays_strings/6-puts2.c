@@ -9,14 +9,17 @@
 
 void puts2(char *str)
 {
-	int i = 0; /* index counter */
+	int i = 0, len; /* index counter */
+
+	for (len = 0; str[len] != '\0'; len++)
+		continue;
 
 	/* print every other character of the string */
-	while (str[i] != '\0')
+	while (i < len)
 	{
 		_putchar(str[i]);
 		i += 2;
 	}
-	
+
 	_putchar('\n');
 }

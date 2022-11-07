@@ -16,12 +16,12 @@ void puts_half(char *str)
 
 	/* get half of string */
 	if ((i % 2) != 0) /* if length of string is odd */
-		n = (i - 1) / 2;
+		n = (i + 1) / 2;
 	else
 		n = i / 2;
 
 	/* print from middle of string to the end */
-	while (n < i) 
+	while (n < i)
 	{
 		_putchar(str[n]);
 		n++;

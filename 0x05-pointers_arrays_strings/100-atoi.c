@@ -31,7 +31,7 @@ int _atoi(char *s)
 
 	i = atoi(p);
 	if (i == 0)
-		retirn (0);
+		return (0);
 
 	return (i * sg);
 }

@@ -15,7 +15,7 @@ char *leet(char *str)
 	 * ie. set[i] => set2[i]
 	 */
 	char *set1 = "aeotlAEOTL";
-	char *set2 = "4307143071:;
+	char *set2 = "4307143071";
 	int i, s;
 
 	/* iterate through each character in the string */

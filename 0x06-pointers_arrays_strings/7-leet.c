@@ -28,7 +28,7 @@ char *leet(char *str)
 		 * in set2
 		 */
 
-		for (s = 0; set1[s] == str[i])
+		for (s = 0; set1[s]; i++)
 		{
 			if (set1[s] == str[i])
 			{

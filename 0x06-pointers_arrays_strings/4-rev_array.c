@@ -16,6 +16,7 @@ void reverse_array(int *a, int n)
 	while (i < j)
 	{
 		tmp_ind = a[i]; /* store first index */
+		a[i] = a[j]; /* swap value of first and last */
 		a[j] = tmp_ind; /* transfer to last index */
 		i++;
 		j--;

@@ -9,9 +9,13 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc > 2)
+	int val = 1;
+
+	if (argc > 2 && argc < 4)
 	{
-		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+		val *= atoi(argv[1]);
+		val *= atoi(argv[2]);
+		printf("%d\n", val);
 	}
 	else
 	{

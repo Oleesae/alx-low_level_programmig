@@ -11,20 +11,18 @@
 
 int main(__attribute__((unused)) int argc, char *argv[])
 {
-	unsigned int val = 0;
-       	int i, c;
+	unsigned int val;
+	int i, c;
 
 	for (i = 1; argv[i]; i++)
 	{
 		for (c = 0; argv[i][c]; c++)
-		{
 			if (!isdigit(argv[i][c]))
 			{
 				printf("Error\n");
 				return (1);
 			}
-			val += atoi(argv[i]);
-		}
+		val += atoi(argv[i]);
 	}
 	printf("%d\n", val);
 	return (0);

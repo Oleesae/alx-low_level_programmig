@@ -12,14 +12,13 @@ int main(__attribute__((unused)) int argc, char *argv[])
 {
 	int val = 1, i = 0;
 
-	if (!isdigit(argv[i]))
-	{
-		printf("Error\n");
-		return (1);
-	}
-
 	while (argv[i])
 	{
+		if (!isdigit(argv[i]))
+		{
+			printf("Error\n");
+			return (1);
+		}
 		val += atoi(argv[i]);
 		i++;
 	}

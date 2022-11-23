@@ -8,20 +8,20 @@
  * Return: Always 0 or 1
  */
 
-int main(int argc, char *argv[])
+int main(__attribute__((unused)) int argc, char *argv[])
 {
-	int val = 0;
+	int val = 1, i = 0;
 
-	if (argc > 2 && argc < 4)
-	{
-		val += atoi(argv[1]);
-		val += atoi(argv[2]);
-		printf("%d\n", val);
-	}
-	else
+	if (!isdigit(argv[i]))
 	{
 		printf("Error\n");
 		return (1);
+	}
+
+	while (argv[i])
+	{
+		val += atoi(argv[i]);
+		i++;
 	}
 	return (0);
 }

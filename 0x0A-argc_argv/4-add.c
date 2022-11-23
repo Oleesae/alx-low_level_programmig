@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - multiplies two arguments
@@ -10,17 +11,20 @@
 
 int main(__attribute__((unused)) int argc, char *argv[])
 {
-	int val = 1, i = 0;
+	int val = 0, i, c;
 
-	while (argv[i])
+	for (i = 1; argv[i]; i++)
 	{
-		if (!isdigit(argv[i]))
+		for (c = 0; argv[i][c]; c++)
 		{
-			printf("Error\n");
-			return (1);
+			if (!isdigit(argv[i][c]))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			val += atoi(argv[i]);
 		}
-		val += atoi(argv[i]);
-		i++;
 	}
+	printf("%d\n", val);
 	return (0);
 }

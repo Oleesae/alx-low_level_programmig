@@ -11,7 +11,8 @@
 
 int main(__attribute__((unused)) int argc, char *argv[])
 {
-	int val = 0, i, c;
+	unsigned int val = 0;
+       	int i, c;
 
 	for (i = 1; argv[i]; i++)
 	{

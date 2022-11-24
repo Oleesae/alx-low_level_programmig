@@ -31,22 +31,34 @@ char *str_concat(char *s1, char *s2)
 {
 	char *str;
 	int i, j; /* s1 and s2 index number */
+	int len1, len2;
+
+	/* treat NULL as empty string */
+	if (s1 == NULL)
+		len1 = 0;
+	else
+	       len1 = _len(s1);
+
+	if (s2 == NULL)
+		len2 = 0;
+	else
+		len2 = _len(s2);
 
 	/* allocate memory space to str */
-	str = malloc(_len(s1) + _len(s2) + 1);
+	str = malloc(len1 + len2 + 1);
 	/* check str returns NULL, stop program */
 	if (str == NULL)
 		return (NULL);
 
 	/* assign s1 to str */
-	for (i = 0; s1[i]; i++)
+	for (i = 0; i < len1; i++)
 	{
 		str[i] = s1[i];
 		continue;
 	}
 
 	/* assign s2 to str */
-	for (j = 0; s2[j]; j++)
+	for (j = 0; j < len2; j++)
 	{
 		str[i] = s2[j];
 		i++;

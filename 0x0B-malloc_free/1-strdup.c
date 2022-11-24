@@ -26,14 +26,16 @@ char *_strdup(char *str)
 
 	/* duplicate str into dup */
 
-	while (str[i])
+	if (str != NULL)
 	{
-		dup[i] = str[i];
-		i++;
+		while (str[i])
+		{
+			dup[i] = str[i];
+			i++;
+		}
+		dup[i] = '\0'; /* end dup with NULL byte */
+		return (dup); /* return pointer of dup */
+		free(dup); /* free memory space allocated to dup */
 	}
-	dup[i] = '\0'; /* end dup with NULL byte */
-
-	return (dup); /* return pointer of dup */
-	free(dup); /* free memory space allocated to dup */
 	return (0);
 }

@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-
+#include <string.h>
 /**
  * _strdup - returns a pointer to a new string whild
  * is a duplicate of the string (str)
@@ -18,7 +18,7 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 	/* allocate size of dup with malloc */
-	dup = malloc(sizeof(str));
+	dup = malloc(strlen(str) + 1);
 
 	/* check if dup returns NULL if yes exit program, return NULL */
 	if (dup == NULL)

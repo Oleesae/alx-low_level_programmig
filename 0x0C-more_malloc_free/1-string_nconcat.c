@@ -32,7 +32,7 @@ char *str_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
 	int i, j; /* s1 and s2 index number */
-	int len1, len2;
+	unsigned int len1, len2;
 
 	/* treat NULL as empty string */
 	if (s1 == NULL)

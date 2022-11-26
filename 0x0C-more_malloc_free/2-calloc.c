@@ -22,7 +22,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (ptr == NULL)
 		return (NULL);
 	/* assign 0 to each byte of ptr */
-	while (ptr[i])
+	while (ptr[i] != NUL)
 	{
 		ptr[i] = 0;
 		i++;

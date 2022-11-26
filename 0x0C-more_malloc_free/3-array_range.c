@@ -13,10 +13,12 @@
 int *array_range(int min, int max)
 {
 	int *n, i;
+	unsigned int ln;
 
 	if (min > max)
 		return (NULL);
-	n = malloc(((max - min) + 1) * sizeof(int));
+	ln = (max - min) + 1;
+	n = malloc(ln * sizeof(int));
 	if (n == NULL)
 		return (NULL);
 	for (i = 0; min <= max; i++)
@@ -26,5 +28,4 @@ int *array_range(int min, int max)
 	}
 	n[i] = '\0';
 	return (n);
-	free(n);
 }

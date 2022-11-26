@@ -10,7 +10,7 @@
 
 int _len(char *s)
 {
-	int len;
+	unsigned int len;
 
 	/* count through each character */
 	for (len = 0; s[len] != '\0'; len++)
@@ -31,7 +31,7 @@ int _len(char *s)
 char *str_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
-	int i, j; /* s1 and s2 index number */
+	unsigned int i, j; /* s1 and s2 index number */
 	unsigned int len1, len2;
 
 	/* treat NULL as empty string */

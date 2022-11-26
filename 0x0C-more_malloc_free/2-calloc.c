@@ -10,7 +10,7 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int i;
+	unsigned int i = 0;
 	char *ptr;
 
 	/* exit if a null byte is passed */

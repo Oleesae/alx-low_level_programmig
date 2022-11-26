@@ -4,7 +4,7 @@
 /**
  * _len - calculates n length of a string, s
  * @s: string
- * @n: number of bytes to count
+ *
  * Return: length of string, s
  */
 

@@ -8,7 +8,7 @@
  * Return: length of string, s
  */
 
-int _len(char *s)
+unsigned int _len(char *s)
 {
 	unsigned int len;
 
@@ -19,7 +19,7 @@ int _len(char *s)
 }
 
 /**
- * str_nconcat - joins n bytes of string s2 to string s1
+ * string_nconcat - joins n bytes of string s2 to string s1
  * and returns a pointer to its new memory space
  * @s1: string one
  * @s2: string two
@@ -28,7 +28,7 @@ int _len(char *s)
  * Return: pointer to new string or NULL
  */
 
-char *str_nconcat(char *s1, char *s2, unsigned int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
 	unsigned int i, j; /* s1 and s2 index number */

@@ -16,7 +16,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_start(nm, n);
 	/* check the value of n */
 	if (n == 0)
+	{
+		printf("\n");
 		exit(EXIT_FAILURE);
+	}
 
 	/* loop and print numbers */
 	for (i = 0; i < n; i++)

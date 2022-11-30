@@ -32,4 +32,5 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	}
 	if (i == n)
 		printf("\n");
+	va_end(nm);
 }

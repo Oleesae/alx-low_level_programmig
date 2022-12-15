@@ -23,17 +23,5 @@ typedef struct list_s
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
 list_t *add_node(list_t **head, const char *str);
-/**
- * _len - calculates the length of the string
- * @str: string
- * Return: number
- */
-size_t _len(char *str)
-{
-	size_t i;
 
-	for (i = 0; str[i] != '\0'; i++)
-		continue;
-	return (i);
-}
 #endif /* __LISTS_H__ */

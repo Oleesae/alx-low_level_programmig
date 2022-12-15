@@ -24,11 +24,11 @@ size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
 list_t *add_node(list_t **head, const char *str);
 /**
- * len - calculates the length of the string
+ * _len - calculates the length of the string
  * @str: string
  * Return: number
  */
-size_t len(char *str)
+size_t _len(char *str)
 {
 	size_t i;
 

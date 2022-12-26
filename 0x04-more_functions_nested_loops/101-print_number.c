@@ -9,6 +9,11 @@
 
 void print_number(int n)
 {
+	if (n == INT_MIN)
+	{
+		putchar ('-');
+		n = INT_MAX;
+	}
 	if (n < 0)
 	{
 		_putchar('-');

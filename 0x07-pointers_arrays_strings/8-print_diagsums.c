@@ -9,7 +9,7 @@
 
 void print_diagsums(int *a, int size)
 {
-	size_t i, j, fd = 0, sd = 0;
+	int i, j, fd = 0, sd = 0;
 
 	if (a == NULL)
 		exit(EXIT_FAILURE);

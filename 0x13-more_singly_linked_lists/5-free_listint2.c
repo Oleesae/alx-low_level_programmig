@@ -10,15 +10,15 @@ void free_listint2(listint_t **head)
 {
 	listint_t *thead, *lhead;
 	
-	if (*head == NULL || head == NULL)
-		return;
-	/* use recursion to access all nodes and free allocated memory */
-	thead = *head;
-
-	while ((lhead = thead) != NULL)
+	if (head == NULL)
 	{
-		thead = thead->next;
-		free(lhead);
+		thead = *head;
+
+		while ((lhead = thead) != NULL)
+		{
+			thead = thead->next;
+			free(lhead);
+		}
+		*head = NULL;
 	}
-	*head = NULL;
 }

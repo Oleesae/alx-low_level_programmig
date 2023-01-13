@@ -2,7 +2,7 @@
 
 /**
  * insert_dnodeint_at_index - inserts the element of a dlistint_t at index
- * @head: pointer to head of dlistint_t
+ * @h: pointer to head of dlistint_t
  * @idx: index to insert
  * @n: value of element
  * Return: dlistint_t address of element
@@ -13,7 +13,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i;
 	dlistint_t *new;
 	dlistint_t *bef, *aft;
-	
+
 	if (*h)
 	{
 		while ((*h)->prev)

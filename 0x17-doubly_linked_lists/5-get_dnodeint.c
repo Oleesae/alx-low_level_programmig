@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * get_dlistint - returns the element of a dlistint_t at index
+ * get_dnodeint_at_index - returns the element of a dlistint_t at index
  * @head: pointer to head of dlistint_t
  * @index: index of element
  * Return: dlistint_t address of element

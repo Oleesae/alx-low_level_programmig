@@ -31,8 +31,7 @@ size_t dlistint_len(const dlistint_t *h)
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	unsigned int i, len;
-	dlistint_t *new;
-	dlistint_t *bef, *aft;
+	dlistint_t *new, *bef, *aft;
 
 	if (*h)
 	{
@@ -59,14 +58,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		new->n = n;
 		bef = *h;
 		for (i = 0; i < idx - 1; i++)
-		{
 			bef = bef->next;
-		}
 		aft = bef->next;
 		new->next = aft;
 		aft->prev = new;
 		bef->next = new;
 		new->prev = bef;
 	}
+	else
+		return (NULL);
 	return (new);
 }

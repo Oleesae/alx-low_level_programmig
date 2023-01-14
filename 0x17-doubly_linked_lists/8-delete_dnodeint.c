@@ -33,6 +33,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *temp, *bef, *aft;
 	unsigned int len, i;
 
+	if (!*head)
+		return (-1);
 	if (*head)
 	{
 		while ((*head)->prev)

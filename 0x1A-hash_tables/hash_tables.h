@@ -1,6 +1,9 @@
 #ifndef HASH_TABLES_H
 #define HASH_TABLES_H
 
+#include <stdlib.h>
+#include <stdarg.h>
+
 typedef unsigned long int ulong;
 
 /**

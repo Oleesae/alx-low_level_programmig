@@ -9,7 +9,6 @@
 
 int _sqrt_recursion(int n)
 {
-	int prev;
 	int i = 0;
 	int sqrt = 0;
 	int value;

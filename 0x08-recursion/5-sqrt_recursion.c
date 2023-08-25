@@ -22,11 +22,7 @@ int _sqrt_recursion(int n)
 			value = -1;
 			sqrt = 1;
 		}
-		else if ((i * i) < n)
-		{
-			prev = i;
-		}
-		else
+		else if ((i * i) == n)
 		{
 			value = i;
 			sqrt = 1;

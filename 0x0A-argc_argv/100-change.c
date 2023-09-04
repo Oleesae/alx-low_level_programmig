@@ -21,22 +21,22 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	if (*argv == NULL)
-		return (0);
-
 	val = 0;
 	n = atoi(argv[1]);
 	if (n < 1)
-		printf("%d", 0);
-
-	for (i = 0; i < 5; i++)
 	{
-		if (n >= coins[i])
-		{
-			val += n / coins[i];
-			printf("Dividing %d by %d\n", n, coins[i]);
-			n = n % coins[i];
-		}
+		printf("%d\n", val);
 	}
-	printf("%d\n", val);
+	else
+	{
+		for (i = 0; i < 5; i++)
+		{
+			if (n >= coins[i])
+			{
+				val += n / coins[i];
+				n = n % coins[i];
+			}
+		}
+		printf("%d\n", val);
+	}
 }

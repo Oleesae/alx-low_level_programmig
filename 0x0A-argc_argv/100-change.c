@@ -18,11 +18,11 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return(1);
+		return (1);
 	}
 
 	if (*argv == NULL)
-		return(0);
+		return (0);
 
 	val = 0;
 	n = atoi(argv[1]);

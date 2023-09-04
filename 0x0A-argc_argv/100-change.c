@@ -3,7 +3,7 @@
 #include <ctype.h>
 
 /**
- * main.c - calculates the change of a given number
+ * main - calculates the change of a given number
  * @argc: number of arguments given
  * @argv: array of arguments given
  *

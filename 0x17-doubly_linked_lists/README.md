@@ -97,4 +97,21 @@ return (new_node);
 	      	head = head->next
 		free(temp)
 ```
-	
+
+### [5. Get node at index](./5-get_dnodeint.c)
+- returns the nth node of a dlistint_t linked list
+- returns null if node doesn't exist
+
+```
+int count = 0
+
+check the head of the linked list
+
+while head is not null
+      if count is equal to index
+      	 break;
+      head = head->next
+      count++
+
+return head;
+```

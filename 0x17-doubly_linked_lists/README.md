@@ -38,22 +38,22 @@
 - adds a new node at the beginning of a **dlistint_t**
 - return the address of the new element, or *NULL* if it failed
 
-> dlistint_t new_node, *current;
->
-> new_node = malloc(sizeof(dlistint_t));
-> if new_node is null
->    return (NULL);
-> new_node->n = n;
-> new_node->next = *head
-> new_node->prev = NULL;
-> current = *head
->
-> if current is not null
->    while current is not null
->    	   current = current->prev    
->
-> if current is not null
->    current->prev = new_node
->
-> *head = new_node;
-> return (*head);
+```
+dlistint_t new_node, *current;
+
+new_node = malloc(sizeof(dlistint_t));
+if new_node is null
+   return (NULL);
+new_node->n = n;
+new_node->next = *head
+new_node->prev = NULL;
+current = *head
+
+if current is not null
+   while current is not null
+   	   current = current->prev    
+if current is not null
+   current->prev = new_node
+*head = new_node;
+return (*head);
+```

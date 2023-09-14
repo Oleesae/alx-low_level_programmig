@@ -24,7 +24,7 @@ unsigned int _len(const dlistint_t *h)
 }
 
 /**
- * insert_dnodeint - inserts a new node at a given position
+ * insert_dnodeint_at_index - inserts a new node at a given position
  * @h: head of given node
  * @idx: index to insert new node
  * @n: data for new node

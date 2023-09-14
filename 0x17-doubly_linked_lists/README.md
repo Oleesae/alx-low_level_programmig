@@ -115,3 +115,21 @@ while head is not null
 
 return head;
 ```
+
+### [6. Sum list](./6-sum_dlistint.c)
+- returns the sum of all data (n) of a dlistint_t linked list
+
+```
+int sum = 0;
+
+if head is null
+   return null
+while head->prev is not null
+      head = head->prev
+
+while head is not null
+      n += head->n
+      head = head->next
+
+return sum
+```

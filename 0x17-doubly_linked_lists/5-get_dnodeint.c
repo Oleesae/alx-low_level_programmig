@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * get_dnodeint - returns the nth node at given index
+ * get_dnodeint_at_index - returns the nth node at given index
  * @head: head of list
  * @index: index to return node
  *

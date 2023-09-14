@@ -34,7 +34,7 @@
 >      count_elem++;
 >return (count_elem);
 
-### 2. Add node
+### [2. Add node](./2-add_dnodeint.c)
 - adds a new node at the beginning of a **dlistint_t**
 - return the address of the new element, or *NULL* if it failed
 
@@ -56,4 +56,12 @@ if current is not null
    current->prev = new_node
 *head = new_node;
 return (*head);
+```
+
+### [3. Add node at the end](./3-add_dnodeint_end.c)
+- adds a new node at the end of a dlistint_t list
+- returns the address to the new element, or NULL if it failed
+
+```
+    Does this count
 ```

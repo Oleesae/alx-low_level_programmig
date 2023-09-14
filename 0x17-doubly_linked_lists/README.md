@@ -84,3 +84,17 @@ return (new_node);
 	new_node->prev = temp
 	return new_node
 ```
+
+### [4. Free list](./4-freedlistint.c)
+- frees a dlistint_t list
+```
+	if head is not null
+	   while head is not null
+	   	 head = head->prev
+
+	temp = head
+	while (temp is not null)
+	      	head = head->next
+		free(temp)
+```
+	

@@ -133,3 +133,32 @@ while head is not null
 
 return sum
 ```
+
+### [7. Insert at index](./7-insert_dnodeint.c)
+- inserts a new node at a given position
+
+```
+create and allocate memory to new node variable
+assign data n
+check for memory leaks and return
+
+check for empty head node
+rewind head to start
+assign length of list
+
+while current != NULL
+      if index is eq 0
+      	 add_at_beginning(&current, n)
+      else if index is eq len-1
+      	 add_at_end(&current, n)
+      else if idx is eq count
+      	   aft = current->next
+	   new->next = aft
+	   aft->prev = new
+	   current->next = new
+	   new->prev = current
+      count++
+      current = current->next
+
+return current
+```

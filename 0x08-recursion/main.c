@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	int r;
+	int r = 0;
 
 	r = _sqrt_recursion(1);
 	printf("%d\n", r);
@@ -22,5 +22,6 @@ int main(void)
 	printf("%d\n", r);
 	r = _sqrt_recursion(-1);
 	printf("%d\n", r);
+
 	return (0);
 }

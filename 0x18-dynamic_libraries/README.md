@@ -31,3 +31,9 @@ unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 ```
+
+### [1. Without libraries what have we? We have no past and no future](./1-create_dynamic_lib.sh)
+- A shell script that creates a dynamic library from c files
+
+### [2. Let's call C functions from Python](./100-operations.so)
+- A shared library containing C functions that is called from python

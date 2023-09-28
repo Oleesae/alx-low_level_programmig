@@ -1,0 +1,22 @@
+#include "variadic_functions.h"
+
+/**
+ * print_all - prints anything
+ * @format: string of characters indicating format of arguments
+ * @...: variadic arguments
+ *
+ * Return: void
+ */
+
+void print_all(const char * const format, ...)
+{
+	va_list nm;
+	size_t i;
+
+	va_start(nm, format);
+	i = 0;
+	while (i < strlen(format))
+	{
+		if (format[i] == "c" && 
+		
+}

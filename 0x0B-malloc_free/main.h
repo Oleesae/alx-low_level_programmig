@@ -10,10 +10,7 @@ char *_strdup(char *str);
 char *str_concat(char *s1, char *s2);
 int **alloc_grid(int width, int height);
 char *argstostr(int ac, char **av);
-int _isspace(char c);
-char *skipspace(char *str);
-unsigned int countchars(char *str);
-unsigned int countwords(char *str);
+void ch_free_grid(char **grid, unsigned int height);
 char **strtow(char *str);
 
 #endif /* MAIN_H */

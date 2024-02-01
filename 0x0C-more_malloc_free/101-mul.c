@@ -1,156 +1,166 @@
-#include <string.h>
 #include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
 
 /**
- * isdigits - checks if a string contains only digits
- * @string: a string
- * Return: 1 if string contains only nums, else 0
- */
-int isdigits(const char *string)
-{
-	unsigned int i;
+ * _atoi_digit - convert a char to integer.
+ * @x: character to convert.
+ * Return: integer.
+ **/
 
-	for (i = 0; string[i]; i++)
-		if (string[i] > '9' || string[i] < '0')
-			return (0);
-	return (1);
+int _atoi_digit(char x)
+{
+	unsigned int res;
+
+	if (x <= '9' && x >= '0')
+		res = x - '0';
+	return (res);
+
 }
 
 /**
- * Array - creates a char array of a specified size and
- * fills it with a constant byte
- * @size: the size of array (in bytes)
- * @b: a constant byte
- * Return: created array
- */
-char *Array(unsigned int size, char b)
+ * _isNumber - Define if a string is a number.
+ * @argv: Pointer to string.
+ * Return: success (0).
+ **/
+int _isNumber(char *argv)
 {
-	unsigned int i;
-	char *buffer;
+	int i;
 
-	buffer = (char *)malloc(size);
-	if (buffer == NULL)
-		return (NULL);
-	for (i = 0; i < size; i++)
-		buffer[i] = b;
-	return (buffer);
-}
-
-/**
- * toint - converts a char into it's appropriate int value
- * @n: the char to be converted
- * Return: an integer
- */
-int toint(char n)
-{
-	return (((int)n) - 48);
-}
-
-/**
- * mul - multiply integers in strings
- * @num1: first integer
- * @num2: second integer
- * @result: a buffer where the result would be stored
- * Return: nothing
- */
-void mul(char *num1, char *num2, char *result)
-{
-	unsigned int len1, len2, i_n1, i_n2, carry, n1, n2, sum;
-	int i, j;
-
-	len1 = strlen(num1);
-	len2 = strlen(num2);
-	i_n1 = i_n2 = 0;
-
-	for (i = len1 - 1; i >= 0; i--)
-	{
-		carry = 0;
-		n1 = toint(num1[i]);
-		i_n2 = 0;
-
-		for (j = len2 - 1; j >= 0; j--)
-		{
-			n2 = toint(num2[j]);
-			sum = n1 * n2 + toint(result[i_n1 + i_n2]) + carry;
-			carry = sum / 10;
-			result[i_n1 + i_n2] = (char)(sum % 10) + 48;
-			i_n2++;
-		}
-		if (carry > 0)
-			result[i_n1 + i_n2] = (char)(toint(result[i_n1 + i_n2]) + carry) + 48;
-		i_n1++;
-	}
-}
-
-/**
- * revrstr - reverse a string inplace
- * @s: the string
- * Return: nothing
- */
-void revrstr(char *s)
-{
-	unsigned int ind, rind, l;
-	char c;
-
-	l = strlen(s);
-	ind = 0;
-	rind = l - 1;
-	while (ind < rind)
-	{
-		c = s[ind];
-		s[ind] = s[rind];
-		s[rind] = c;
-		ind++;
-		rind--;
-	}
-}
-
-/**
- * main - entry point
- * @argc: number arguments passed
- * @argv: list of arguments passed
- *
- * Return: Always 0
- */
-int main(int argc, char const *argv[])
-{
-	unsigned int len1, len2;
-	int l;
-	char *num1, *num2, *result;
-
-	if (argc != 3 || !isdigits(argv[1]) || !isdigits(argv[2]))
-	{
-		puts("Error");
-		exit(98);
-	}
-	num1 = strdup(argv[1]);
-	if (num1 == NULL)
-		exit(98);
-	num2 = strdup(argv[2]);
-	if (num2 == NULL)
-	{
-		free(num1);
-		exit(98);
-	}
-	len1 = strlen(num1);
-	len2 = strlen(num2);
-	result = Array(len1 + len2, '0');
-	if (result == NULL)
-		exit(98);
-	mul(num1, num2, result);
-	l = strlen(result) - 1;
-	for (; l >= 0 && result[l] == '0'; l--)
-		result[l] = '\0';
-	if (l == -1)
-		puts("0");
-	else
-	{
-		revrstr(result);
-		puts(result);
-	}
-	free(result);
-	free(num1);
-	free(num2);
+	for (i = 0; argv[i]; i++)
+		if (argv[i] < 48 || argv[i] > 57)
+			return (1);
 	return (0);
+
+}
+
+/**
+ *_calloc - allocate array of size * nmemb.
+ * @nmemb: number of elements.
+ * @size: size of element.
+ * Return: pointer to array.
+ **/
+
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	char *tab;
+	unsigned int i;
+
+	tab = malloc(size * nmemb);
+
+	if (tab == NULL)
+		return (NULL);
+
+	for (i = 0; i < (size * nmemb); i++)
+		tab[i] = '0';
+
+	return (tab);
+
+}
+
+/**
+ * mul_array - multiply two arrays.
+ * @a1: first array.
+ * @len1: length of array a1.
+ * @a2:  char.
+ * @a3: array for result.
+ * @lena: length of array a3.
+ * Return: pointer to array.
+ **/
+
+void *mul_array(char *a1, int len1, char a2, char *a3, int lena)
+{
+	int mul = 0, i, k;
+
+	k = lena;
+	for (i = len1 - 1; i >= 0 ; i--)
+	{
+		mul += (a1[i] - '0') * (a2 - '0') + (a3[k] - '0');
+		a3[k] = (mul % 10) + '0';
+		mul /= 10;
+		k--;
+
+	}
+
+	while (mul != 0)
+	{
+		mul += a3[k] - '0';
+		a3[k] = (mul % 10) + '0';
+		mul /= 10;
+		k--;
+
+	}
+
+	return (a3);
+
+}
+/**
+ * print_array - print all digits of array.
+ * @nb: number of elements to print.
+ * @a: array of elements.
+ **/
+void print_array(char *a, int nb)
+{
+	int i = 0;
+
+	while (a[i] == '0' && (i + 1) < nb)
+	{
+		i++;
+
+	}
+	for (; i < nb; i++)
+	{
+		_putchar(a[i]);
+
+	}
+	_putchar('\n');
+
+}
+
+/**
+ *main - print the multiplication of 2 numbers.
+ *@argc: array length.
+ *@argv: array.
+ *Return: 0.
+ */
+
+int main(int argc, char *argv[])
+{
+	int i, c, len1, len2, lenres;
+	char E[6] = {'E', 'r', 'r', 'o', 'r', '\n'};
+	char *tabres;
+
+	if (argc != 3 || _isNumber(argv[1]) == 1 || _isNumber(argv[2]) == 1)
+	{
+		for (i = 0; i < 6; i++)
+		{
+			_putchar(E[i]);
+
+		}
+		exit(98);
+
+	}
+	for (len1 = 0; argv[1][len1]; len1++)
+		;
+	for (len2 = 0; argv[2][len2]; len2++)
+		;
+	lenres = len1 + len2;
+	tabres = _calloc(lenres, sizeof(int));
+	if (tabres == NULL)
+	{
+		free(tabres);
+		return (0);
+
+	}
+	for (i = len2 - 1, c = 0; i >= 0; i--)
+	{
+		tabres = mul_array(argv[1], len1, argv[2][i], tabres, (lenres - 1 - c));
+		c++;
+
+	}
+	print_array(tabres, lenres);
+	free(tabres);
+	exit(EXIT_SUCCESS);
+	return (0);
+
 }

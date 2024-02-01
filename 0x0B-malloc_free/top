@@ -1,67 +1,110 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * ch_free_grid - frees a 2 dimensional array.
- * @grid: multidimensional array ofchar.
- * @height: height of the array.
- *
- * Return: no return.
+ * _isspace - checks if a char is a whitespace
+ * @c: a char
+ * Return: 1 if c is a whitespace, else 0
  */
-void ch_free_grid(char **grid, unsigned int height)
+int _isspace(char c)
 {
-	if (grid != NULL && height != 0)
-	{
-		for (; height > 0; height--)
-			free(grid[height]);
-		free(grid[height]);
-		free(grid);
-	}
+	if (c == ' ' || c == '\t' || c == '\n')
+		return (1);
+	return (0);
 }
 
 /**
- * strtow - splits a string into words.
- * @str: string.
- *
- * Return: pointer of an array of integers.
+ * skipspace - skip all spaces and jump to the start of the next word
+ * @str: a string
+ * Return: a pointer to the beginning of the next word
+ */
+char *skipspace(char *str)
+{
+	if (!_isspace(*str))
+		return (str);
+	return (skipspace(str + 1));
+}
+
+/**
+ * countchars - count the character in the first word of a string
+ * @str: a string
+ * Return: the length of the word
+ */
+unsigned int countchars(char *str)
+{
+	if (_isspace(*str) || !*str)
+		return (0);
+	return (1 + countchars(str + 1));
+}
+
+/**
+ * countwords - count how wany words are in a string
+ * @str: a string
+ * Return: the number of words in the string
+ */
+unsigned int countwords(char *str)
+{
+	char *s = str;
+	unsigned int wc = 0;
+	char state = 0;
+
+	while (*s)
+	{
+		if (_isspace(*s))
+			state = 0;
+		else if (state == 0)
+		{
+			state = 1;
+			++wc;
+		}
+		++s;
+	}
+	return (wc);
+}
+
+/**
+ * strtow - split a string into words
+ * @str: a string
+ * Return: an array of words found in the string
  */
 char **strtow(char *str)
 {
-	char **aout;
-	unsigned int c, height, i, j, a1;
+	char **words;
+	char *word;
+	unsigned int w, i, c, length, wc;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || !*str)
 		return (NULL);
-	for (c = height = 0; str[c] != '\0'; c++)
-		if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
-			height++;
-	aout = malloc((height + 1) * sizeof(char *));
-	if (aout == NULL || height  == 0)
-	{
-		free(aout);
+
+	word = skipspace(str);
+	if (!word[0]) /* is word an empty string */
 		return (NULL);
-	}
-	for (i = a1 = 0; i < height; i++)
+	/* allocate space for all words */
+	wc = countwords(word);
+	words = (char **)malloc((wc + 1) * sizeof(char *));
+	if (words == NULL)
+		return (NULL);
+	/* loop through every word found */
+	for (w = 0; w < wc; w++)
 	{
-		for (c = a1; str[c] != '\0'; c++)
+		length = countchars(word);
+		/* allocate space for each word */
+		words[w] = (char *)malloc(sizeof(char) * length + 1);
+		/* if this space cannot be allocated, clear all previously allocated space */
+		if (words[w] == NULL)
 		{
-			if (str[c] == ' ')
-				a1++;
-			if (str[c] !=  ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
-			{
-				aout[i] =  malloc((c - a1 + 2) * sizeof(char));
-				if (aout[i] == NULL)
-				{
-					ch_free_grid(aout, i);
-					return (NULL);
-				}
-				break;
-			}
+			for (i = 0; i < w; i++)
+				free(words[i]);
+			free(words);
+			return (NULL);
 		}
-		for (j = 0; a1 <= c; a1++, j++)
-			aout[i][j] = str[a1];
-		aout[i][j] = '\0';
+		/* fill up each word with the appropriate chars */
+		for (c = 0; c < length; c++)
+			words[w][c] = word[c];
+		words[w][c] = '\0';
+		/* skip to the next word */
+		word = skipspace(word + length);
 	}
-	aout[i] = NULL;
-	return (aout);
+	/* NULL should be the last item in the array */
+	words[w] = NULL;
+	return (words);
 }
